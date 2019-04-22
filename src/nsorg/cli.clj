@@ -85,18 +85,6 @@
       ["./"]))
 
 (defn check
-  "Leiningen plugin for organizing ns forms in source files.
-
-Usage: lein nsorg [OPTIONS] [PATHS]
-
-Clojure files are searched recursively from given paths. If no paths are given
-and Leiningen is run inside project, project source and test paths are used.
-Otherwise current workign directory is used.
-
-Options:
-  -e, --replace       Apply organizing suggestions to source files.
-  -i, --interactive   Ask before applying suggestion (requires --replace).
-  -x, --exclude PATH  Path to exclude from analysis."
   ([args]
     (check args nil))
   ([args {:keys [default-paths]}]
@@ -122,7 +110,20 @@ Options:
                            (not (:replace options))))
         :summary  (summarize options result)}))))
 
-(defn -main [& args]
+(defn -main
+  "Command line tool for organizing ns forms in source files.
+
+   Arguments [OPTIONS] [PATHS]
+
+   Clojure files are searched recursively from given paths. If no paths are given
+   and Leiningen is run inside project, project source and test paths are used.
+   Otherwise current workign directory is used.
+
+   Options:
+   -e, --replace       Apply organizing suggestions to source files.
+   -i, --interactive   Ask before applying suggestion (requires --replace).
+   -x, --exclude PATH  Path to exclude from analysis."
+  [& args]
   (let [{:keys [success? summary]} (check args)]
     (shutdown-agents)
     (if success?
