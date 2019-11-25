@@ -20,6 +20,21 @@
 
 (tabular
   (fact
+    "Check is considered successful if there are no errors, and no problems if we're not fixing them"
+    (nsorg/success? {:replace ?replace}
+                     {:errors ?errors :problems ?problems})
+    => ?success)
+  ?replace ?errors ?problems ?success
+  false    0       0         true
+  false    2       0         false
+  false    0       3         false
+  false    2       3         false
+  true     0       3         true
+  true     2       3         false
+  true     2       3         false)
+
+(tabular
+  (fact
     "Paths are based on arguments and project source and test paths. Fallback is current working directory"
     (nsorg/get-paths ?arguments ?default-paths) => ?paths)
   ?arguments    ?default-paths         ?paths
