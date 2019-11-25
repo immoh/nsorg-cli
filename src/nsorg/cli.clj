@@ -84,6 +84,11 @@
       (seq default-paths)
       ["./"]))
 
+(defn success? [options result]
+  (not (or (pos? (:errors result))
+           (and (pos? (:problems result))
+                (not (:replace options))))))
+
 (defn check
   ([args]
     (check args nil))
@@ -105,9 +110,7 @@
          (terminal/info ignored-path))
        (terminal/info))
      (let [result (organize-ns-forms! paths excluded-paths options)]
-       {:success? (or (pos? (:errors result))
-                      (and (pos? (:problems result))
-                           (not (:replace options))))
+       {:success? (success? options result)
         :summary  (summarize options result)}))))
 
 (defn -main
