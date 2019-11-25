@@ -1,4 +1,4 @@
-(defproject nsorg-cli "0.4.0-SNAPSHOT"
+(defproject nsorg-cli "0.3.1"
   :description "Command line tool for organizing ns form"
   :url "https://github.com/immoh/nsorg-cli"
   :license {:name "Eclipse Public License"

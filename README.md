@@ -17,14 +17,14 @@ and Leiningen plugin [lein-nsorg](https://github.com/immoh/lein-nsorg).
 You can try it out with this one liner:
 
 ```
-$ clojure -Sdeps '{:deps {nsorg-cli {:mvn/version "0.3.0"}}}' -m nsorg.cli
+$ clojure -Sdeps '{:deps {nsorg-cli {:mvn/version "0.3.1"}}}' -m nsorg.cli
 ```
 
 
 Or add it as an alias in your `deps.edn` file:
 
 ```clj
-{:aliases {:nsorg {:extra-deps {nsorg-cli {:mvn/version "0.3.0"}}
+{:aliases {:nsorg {:extra-deps {nsorg-cli {:mvn/version "0.3.1"}}
                    :main-opts  ["-m" "nsorg.cli"]}}}
 ```
 and run it with:
