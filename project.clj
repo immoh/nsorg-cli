@@ -6,6 +6,6 @@
   :dependencies [[clojure-term-colors "0.1.0"]
                  [nsorg "0.2.0"]
                  [org.clojure/tools.cli "0.4.2"]]
-  :profiles {:dev {:dependencies [[midje "1.9.8"]
-                                  [org.clojure/clojure "1.10.0"]]
+  :profiles {:dev {:dependencies [[midje "1.9.9"]
+                                  [org.clojure/clojure "1.10.1"]]
                    :plugins      [[lein-midje "3.2.1"]]}})
