@@ -17,7 +17,7 @@ and Leiningen plugin [lein-nsorg](https://github.com/immoh/lein-nsorg).
 You can try it out with this one liner:
 
 ```
-$ clojure -Sdeps '{:deps {nsorg-cli {:mvn/version "0.3.1"}}}' -m nsorg.cli
+$ clojure -Sdeps '{:deps {nsorg-cli/nsorg-cli {:mvn/version "0.3.1"}}}' -m nsorg.cli
 ```
 
 
